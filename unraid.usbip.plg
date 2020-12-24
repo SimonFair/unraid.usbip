@@ -1,0 +1,111 @@
+<?xml version='1.0' standalone='yes'?>
+
+<!DOCTYPE PLUGIN [
+<!ENTITY name      "unraid.usbip">
+<!ENTITY author    "SimonFair">
+<!ENTITY version   "2020.12.23">
+<!ENTITY launch    "Tools/iSCSI">
+<!ENTITY gitURL    "https://raw.githubusercontent.com/SimonFair/unraid.usbip/master/package">
+<!ENTITY pluginURL "&gitURL;/unraid.usbip.plg">
+<!ENTITY supportURL	"https://forums.unraid.net/">
+<!ENTITY packages	"/boot/config/plugins/&name;/package">
+<!ENTITY MD5		"d4f5bfbbd53b4cf54e7e5998d33c53a3">
+]>
+
+<PLUGIN name="&name;"
+		author="&author;"
+		launch="&launch;"
+		version="&version;"
+		pluginURL="&pluginURL;"
+		support="&supportURL;"
+		icon="unlock-alt"
+		min="6.9.0-rc2">
+
+<CHANGES>
+##&name;
+###&version;
+23rd Update
+
+- initial release.
+</CHANGES>
+
+<!--
+The 'pre-install' script.
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+# Remove emhttp files so we can re-install.
+rm -rf /boot/extra/usbip.txz 2>/dev/null
+</INLINE>
+</FILE>
+
+<!--
+Get the plugin bundle.
+-->
+<FILE Name="&packages;/&name;-&version;.txz">
+<URL>"&gitURL;/&name;-&version;.txz"</URL>
+<MD5>&MD5;</MD5>
+</FILE>
+
+
+<!--
+The 'post-install' script.
+-->
+<FILE Run="/bin/bash">
+<INLINE>
+# Install the plugin bundle.
+# Create plugin directory
+mkdir /boot/config/plugins/&name; 2>/dev/null
+
+# Remove old packages
+#find "&packages;/" -type f -iname "*.txz" -delete
+
+# Install the 'package'.
+installpkg &packages;/&name;-&version;.txz
+
+# Adjust plugin permissions.
+chmod 755 -R /usr/local/emhttp/plugins/&name; 2>/dev/null
+
+
+# Clean out old plugin packages
+find /boot/config/plugins/&name; -maxdepth 1 -type f -iname "*.t*z" -delete
+find &packages; -type f -iname "&name;*.txz" ! -iname "*&version;*" -delete
+find &packages; -type f -iname "&name;*.md5" ! -iname "*&version;*" -delete
+
+
+echo ""
+echo "-----------------------------------------------------------"
+echo " &name; has been installed."
+echo " "
+echo " Copyright 2016-2020, &author;"
+echo " Version: &version;"
+echo ""
+echo "-----------------------------------------------------------"
+echo ""
+</INLINE>
+</FILE>
+
+<!--
+The 'remove' script.
+-->
+<FILE Run="/bin/bash" Method="remove">
+<INLINE>
+
+# Remove installed packages
+find "&packages;/" -type f -iname "*.txz" -delete
+
+
+rm -f /tmp/plugins/&name;.plg 
+
+
+
+echo ""
+echo "-----------------------------------------------------------"
+echo " &name; has been uninstalled."
+echo "-----------------------------------------------------------"
+echo ""
+
+</INLINE>
+</FILE>
+
+</PLUGIN>
