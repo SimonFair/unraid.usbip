@@ -18,7 +18,7 @@
 		version="&version;"
 		pluginURL="&pluginURL;"
 		support="&supportURL;"
-		icon="unlock-alt"
+		icon="gear"
 		min="6.9.0-rc2">
 
 <CHANGES>

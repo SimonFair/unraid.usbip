@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+<Plugin>True</Plugin>
+<PluginURL>https://github.com/SimonFair/unraid.usbip/raw/main/unraid.usbip.plg</PluginURL>
+<PluginAuthor>SimonFair</PluginAuthor>
+<Beta>True</Beta>
+<Category>Other:</Category>
+<Name>Unraid USBip</Name>
+<DonateText>If you wanna buy me a coffee.</DonateText>
+<DonateLink>https://paypal.me/SimonNFairweather?locale.x=en_GB</DonateLink>
+<DonateImage>https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_74x21.png</DonateImage>
+<Description>
+Install Binaries for usbip and usbipd with associated libraries.
+</Description>
+<Support>https://forums.unraid.net/</Support>
+<Date>2020-12-23</Date>
+<Changes>
+Initial Release 
+<IconFA>cogs</IconFA>
+</Containers>
