@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Containers>
 <Plugin>True</Plugin>
-<PluginURL>https://github.com/SimonFair/unraid.usbip/raw/main/unraid.usbip.plg</PluginURL>
+<PluginURL>https://raw.githubusercontent.com/SimonFair/unraid.usbip/master/unraid.usbip.plg</PluginURL>
 <PluginAuthor>SimonFair</PluginAuthor>
 <Beta>True</Beta>
 <Category>Other:</Category>
@@ -15,6 +15,7 @@ Install Binaries for usbip and usbipd with associated libraries.
 <Support>https://forums.unraid.net/</Support>
 <Date>2020-12-23</Date>
 <Changes>
-Initial Release 
+Initial Release
+</Changes>
 <IconFA>cogs</IconFA>
 </Containers>
