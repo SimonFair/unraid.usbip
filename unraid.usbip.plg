@@ -13,7 +13,6 @@
 
 <PLUGIN name="&name;"
 		author="&author;"
-		launch="&launch;"
 		version="&version;"
 		pluginURL="&pluginURL;"
 		support="&supportURL;"
