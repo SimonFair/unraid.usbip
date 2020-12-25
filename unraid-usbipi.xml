@@ -4,7 +4,7 @@
 <PluginURL>https://raw.githubusercontent.com/SimonFair/unraid.usbip/master/unraid.usbip.plg</PluginURL>
 <PluginAuthor>SimonFair</PluginAuthor>
 <Beta>True</Beta>
-<Category>Other:</Category>
+<Category>Other: Drivers:</Category>
 <Name>Unraid USBip</Name>
 <DonateText>If you wanna buy me a coffee.</DonateText>
 <DonateLink>https://paypal.me/SimonNFairweather?locale.x=en_GB</DonateLink>
